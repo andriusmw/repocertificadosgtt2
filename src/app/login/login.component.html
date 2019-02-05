@@ -1,0 +1,12 @@
+<div class="formcontainer">
+  <form (submit)="login($event)"> <!-- crear función login()-->
+    <!--[(ngModel)]="username"-->
+    <!--[(ngModel)]="password"-->
+    <label>Username:</label>
+    <input type="text" placeholder="username"  name="username" [(ngModel)]="username"/>
+    <label>Password</label>
+    <input type="text" placeholder="password"  name="password" [(ngModel)]="password" />
+    <button type="submit" value="login">Login</button>
+    <!--<div *ngIf="error">{{ error | json }}</div>-->
+  </form>
+  </div>

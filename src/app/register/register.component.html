@@ -1,0 +1,17 @@
+<div class="formcontainer">
+  <form (submit)="register($event)"> <!-- crear función register()-->
+    <!--[(ngModel)]="username"-->
+    <!--[(ngModel)]="password"-->
+    
+    <label>Username:</label>
+    <input type="text" placeholder="username"  name="username" [(ngModel)]="username"/>
+    <label>Password</label>
+    <input type="text" placeholder="password"  name="password" [(ngModel)]="password" />
+    <label>E-mail</label>
+    <input type="text" placeholder="e-mail"  name="e-mail" [(ngModel)]="email" /> 
+    <button type="submit">Register</button>
+    <!--<div *ngIf="error">{{ error | json }}</div>-->
+  
+  </form>
+  </div>
+  
