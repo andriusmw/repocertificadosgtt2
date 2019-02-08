@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ApiGTT.Models;
-//using ApiGTT.Helpers;
+using ApiGTT.Models;  //Para los contextos de Users, y Jira ( AppDBContext)
+using ApiGTT.Helpers; //Para la funcion MD5 de cifrado
 
 namespace ApiGTT.Controllers
 {
@@ -23,7 +23,7 @@ namespace ApiGTT.Controllers
                     Console.WriteLine("No existe usuarios");
                     Users usuario = new Users();
                     usuario.username="Xavi";
-                    usuario.password="pass";
+                    usuario.password=Encrypt.Hash("pass");
                    
                     this._context.Users.Add(usuario);
                     this._context.SaveChanges();
