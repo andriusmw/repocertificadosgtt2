@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace api.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20190208163715_initial")]
-    partial class initial
+    [Migration("20190208170846_emailinusers")]
+    partial class emailinusers
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,6 +19,20 @@ namespace api.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
+
+            modelBuilder.Entity("ApiGTT.Models.Certificates", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("name");
+
+                    b.Property<string>("type");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Certificates");
+                });
 
             modelBuilder.Entity("ApiGTT.Models.Jira", b =>
                 {
@@ -38,6 +52,8 @@ namespace api.Migrations
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("email");
 
                     b.Property<string>("password");
 
