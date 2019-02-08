@@ -15,7 +15,7 @@ namespace ApiGTT.Controllers
     {
         private readonly AppDBContext _context;
 
-        public UsersController(AppDBContext context)
+        public UsersController(AppDBContext context) //Crea usuario sino existe ninguno
         {
             this._context = context;
             if(this._context.Users.Count()==0)
@@ -33,14 +33,14 @@ namespace ApiGTT.Controllers
 
         // GET api/users
         [HttpGet]
-        public ActionResult<List<Users>> GetAll()
+        public ActionResult<List<Users>> GetAll() //Obtiene todos los usuarios en una lista
         {
             return this._context.Users.ToList();
         }
 
         // GET api/users/5
         [HttpGet("{id}")]
-        public ActionResult<Users> Get(long id)
+        public ActionResult<Users> Get(long id) //Muestra el usuario con el id seleccionado
         {
             Users user = this._context.Users.Find(id);
             if (user== null){
@@ -51,7 +51,7 @@ namespace ApiGTT.Controllers
 
         // POST api/values
         [HttpPost]
-        public ActionResult<Users> Post([FromBody] Users value)
+        public ActionResult<Users> Post([FromBody] Users value) //Pasa valores del front al contexto de usuario
         {
                     this._context.Users.Add(value);
                     this._context.SaveChanges();
