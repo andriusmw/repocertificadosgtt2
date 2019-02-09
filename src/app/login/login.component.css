@@ -1,11 +1,12 @@
 .formcontainer {
     text-align: center;
     position: absolute;
+    top: 40%;
     left: 40%;
-    background-color: rgb(238, 233, 226);
+    /*background-color: rgb(238, 233, 226);
     -webkit-box-shadow: 10px 10px 13px -8px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 13px -8px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 13px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 13px -8px rgba(0,0,0,0.75);*/
     margin:2%;
 }
 
@@ -29,3 +30,6 @@ button {
     background-color: #1aff1a;;
     color: white;
 }
+
+
+

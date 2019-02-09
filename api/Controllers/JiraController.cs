@@ -15,6 +15,9 @@ namespace api.Controllers
     {
         private readonly AppDBContext _context; //Para que cargue el contexto.
 
+         /*  public JiraController(AppDBContext context) //Sino funciona seguramennte falte esto.
+        { this._context = context;}  */
+
         // GET api/Jira
         [HttpGet]
         public ActionResult<List<Jira>> Get()  //Carga lista de objetos tipo Jira

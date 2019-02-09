@@ -1,13 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    background-image: url(./assets/edificiogtt.jpg); 
+   background-image: url(./assets/LogoGTT.jpg); 
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: -30%;
+  
     
     
     
-    background-color: red;
+   /* background-color: red; chivato para cuando estaba haciendo respondive el fondo*/
     
-    align-content: center;
+   align-content: center;
 
    box-sizing: border-box;
     margin: 0;
