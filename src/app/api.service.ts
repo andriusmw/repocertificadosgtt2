@@ -17,7 +17,7 @@ export class ApiService {
   register(username, password, email) {
     const body = { username, password, email };
     //------------------------------URL que hay que cambiar por la de nuestra api
-    return this.http.post('url-endpoint', body).toPromise();
+    return this.http.post('https://lolcalhost:4200/api/Users', body).toPromise();
   }
 
   login(username, password) {
@@ -29,7 +29,7 @@ export class ApiService {
       URL y el body/CUPERO acorde a la documentación*/
 
       this.http
-        .post('url-endpoint', body)
+        .post('https://lolcalhost:4200/api/Auth', body)
         .toPromise()
         .then(() => { /* Estructura .then .catch que dentro tiene el valor para el caso reject 
           de la promesa.

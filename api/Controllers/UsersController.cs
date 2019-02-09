@@ -49,7 +49,7 @@ namespace ApiGTT.Controllers
             return user;
         }
 
-        // POST api/values
+        // POST api/Users
         [HttpPost]
         public ActionResult<Users> Post([FromBody] Users value) //Pasa valores del front al contexto de usuario
         {
