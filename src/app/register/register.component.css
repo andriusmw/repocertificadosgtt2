@@ -36,3 +36,33 @@ img {
     height: 100%;
     size: cover;
 }
+
+app-nav-bar {
+    display: flex;
+    background-color: rgb(238, 233, 226);
+    -webkit-box-shadow: 10px 10px 13px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 13px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 13px -8px rgba(0,0,0,0.75);
+    position: relative;
+
+}
+
+.logonavbar {
+    width: 20%;
+    height: 10%;
+}
+
+/*button {
+    text-align: center;
+   /* margin-bottom: 10px;*/
+   /* background-color: #1aff1a;;
+    color: white;
+    position: absolute;
+    margin: 2%;
+}*/
+
+#botonboard {
+    margin: 2%;
+    position: relative;
+   
+}

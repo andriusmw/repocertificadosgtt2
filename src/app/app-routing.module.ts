@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { BoardComponent } from './board/board.component';
+import { ShowCertificatesComponent} from './show-certificates/show-certificates.component';
+import { CreateCertificatesComponent} from './create-certificates/create-certificates.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,14 @@ const routes: Routes = [
   {
     path: 'board',
     component: BoardComponent,
+  },
+  {
+    path: 'showCertificates',
+    component: ShowCertificatesComponent,
+  },
+  {
+    path: 'createCertificates',
+    component: CreateCertificatesComponent,
   },
   {
     path: '**',

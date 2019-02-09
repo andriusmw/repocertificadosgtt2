@@ -17,7 +17,7 @@ export class ApiService {
   register(username, password, email) {
     const body = { username, password, email };
     //------------------------------URL que hay que cambiar por la de nuestra api
-    return this.http.post('https://lolcalhost:4200/api/Users', body).toPromise();
+    return this.http.post('/api/Users', body).toPromise();
   }
 
   login(username, password) {
@@ -29,7 +29,7 @@ export class ApiService {
       URL y el body/CUPERO acorde a la documentación*/
 
       this.http
-        .post('https://lolcalhost:4200/api/Auth', body)
+        .post('/api/Auth', body)
         .toPromise()
         .then(() => { /* Estructura .then .catch que dentro tiene el valor para el caso reject 
           de la promesa.
@@ -57,4 +57,19 @@ export class ApiService {
           }
         });
     });
-  }}
+  }
+
+   //Este lo usaría para recibir los certificados
+   getcertificates(): any {
+  
+    //const options = { headers: { Authorization: `Bearer ${this.jwt}` } };
+    return this.http.get('api/Certificates'/*, options*/).toPromise();
+    /* NOTA: Cambiar la URL y la cabecera en función de la documentación de la api de turno"*/
+    // Comento el options porque no pide BODY solo un GET con un Endpoint el Back se ocupa del resto.
+
+  }
+
+
+
+
+}

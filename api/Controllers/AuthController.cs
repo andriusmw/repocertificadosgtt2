@@ -3,8 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Web;
+
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 using ApiGTT.Models;
 using ApiGTT.Helpers;
+
 
 namespace api.Controllers
 {
@@ -40,7 +48,9 @@ namespace api.Controllers
             Users UserResult = this._context.Users.Where(
                 user=>user.username==value.username).First();
                 if(UserResult.password == Encrypt.Hash(value.password) ){
-                    return Ok(UserResult); //devolvería een verdad el JWT
+                   Console.WriteLine("Login");
+                JwtSecurityToken token = BuildToken(UserResult);
+                return Ok(new {token= new JwtSecurityTokenHandler().WriteToken(token)}); //devolvería een verdad el JWT
                 }else {
                     Console.WriteLine("Contraseña incorrecta");
                     return Unauthorized();
@@ -62,5 +72,23 @@ namespace api.Controllers
         public void Delete(int id)
         {
         }
+
+        public JwtSecurityToken BuildToken(Users data)
+        {
+          var claims = new[]{
+              new Claim(ClaimTypes.Name, data.username),
+              new Claim("id", data.id.ToString())
+          };
+          var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("123456 secretsecretsecret"));
+          var creds = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
+        
+            var token = new JwtSecurityToken(
+                issuer:"geekshubs.com",
+                audience: "geekshubs.com",
+                claims: claims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256));
+            return token ;
+	    }
     }
 }

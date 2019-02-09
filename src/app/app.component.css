@@ -5,7 +5,10 @@ body {
     
 }
 
-
+app-board {
+    display: flex;
+    flex-wrap: wrap;
+}
   
 
 app-nav-bar {

@@ -10,6 +10,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { BoardComponent } from './board/board.component';
+import { ShowCertificatesComponent } from './show-certificates/show-certificates.component';
+import { CreateCertificatesComponent } from './create-certificates/create-certificates.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { BoardComponent } from './board/board.component';
     LoginComponent,
     RegisterComponent,
     BoardComponent,
+    ShowCertificatesComponent,
+    CreateCertificatesComponent,
   
   ],
   imports: [
