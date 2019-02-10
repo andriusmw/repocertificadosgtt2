@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 /*import { Task, List } from './models.interface';*/
 
 @Injectable({
@@ -7,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   jwt: string = localStorage.getItem('jwt');
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router: Router) {}
 
   /*Esto es lo que pasa cuando desde register-view.component.component.ts llama a la API */
   /* El username y la password se pasan aquí y los guarda en el "body" que es el CUERPO que pone
@@ -59,17 +61,51 @@ export class ApiService {
     });
   }
 
+  /*-------------------------------------------------CERTIFICADOS-----------------------------*/
+
    //Este lo usaría para recibir los certificados
+   
    getcertificates(): any {
-  
     //const options = { headers: { Authorization: `Bearer ${this.jwt}` } };
-    return this.http.get('api/Certificates'/*, options*/).toPromise();
+    return this.http.get('api/Certificates'/*, options*/).toPromise()
     /* NOTA: Cambiar la URL y la cabecera en función de la documentación de la api de turno"*/
     // Comento el options porque no pide BODY solo un GET con un Endpoint el Back se ocupa del resto.
 
+    /*---------------------------------RAYADA--------------------------------------------*/
+    //.then((rawLists: Array<any>) => { /*Recive el GET del backend y crea un array*/
+    //  console.log(rawLists);
+    //  const lists = rawLists.map(rawList => ({ /*Estructura de datos de las listas en el array*/
+    //    /*Hace un Mapeo del GET y asigna esos valores a la estructura de datos de abajo importada
+    //    del nodels.interface.ts*/
+    //   listId: rawList.id,
+    //    createdAt: rawList.createdAt,
+    //    modifiedAt: rawList.updatedAt,
+    //    name: rawList.name,
+    //    tasks: [],
+    //  })) 
+    //  .catch(() => this.router.navigate(['/login']));
+   // }
+    
   }
 
-
+  
+  
+  //Este lo usaría para crear certificados.
+  registerCert(alias, password , id_orga,
+    nombre_cliente,
+    contacto_renovacion,
+    repositorio,
+    observaciones,
+    integration_list) {
+    const body = { alias, password , id_orga,
+      nombre_cliente,
+      contacto_renovacion,
+      repositorio,
+      observaciones,
+      integration_list };
+    //------------------------------URL que hay que cambiar por la de nuestra api
+    return this.http.post('/api/Certificates', body).toPromise();
+  }
 
 
 }

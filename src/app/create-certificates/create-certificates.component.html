@@ -3,3 +3,31 @@
  
 </app-nav-bar>
 <button id="botonboard" routerLink="/board" routerLinkActive="active"><b>Ir a Board</b></button>
+
+<div class="formcontainer">
+    <form (submit)="registerCert($event)"> <!-- crear función createCertificate()-->
+      <!--[(ngModel)]="username"-->
+      <!--[(ngModel)]="password"-->
+      
+      <label>Alias del certificado:</label>
+      <input type="text" placeholder="username"  name="alias" [(ngModel)]="alias"/>
+      <label>Password:</label> <!-- se cifra en el auth en el backend-->
+      <input type="text" placeholder="password"  name="password" [(ngModel)]="password" />
+      <label>ID_ORGA:</label>
+      <input type="text" placeholder="ID_ORGA"  name="ID_ORGA" [(ngModel)]="id_orga" /> 
+      <label>Nombre cliente:</label>
+      <input type="text" placeholder="nombre cliente"  name="nombre_cli" [(ngModel)]="nombre_cliente" /> 
+      <label>Lista integraciones:</label>
+      <input type="text" placeholder="Lista integraciones"  name="lista_integra" [(ngModel)]="integration_list" /> 
+      <label>Contacto renovaciones:</label>
+      <input type="text" placeholder="Contacto renovaciones"  name="Contacto_renova" [(ngModel)]="contacto_renovacion" /> 
+      <label>Repositorio:</label>
+      <input type="text" placeholder="Repositorio"  name="repositorio" [(ngModel)]="repositorio" />  
+      <label>Observaciones:</label>
+      <input type="text" placeholder="Observaciones"  name="observaciones" [(ngModel)]="observaciones" />  
+
+      <button id="botoncertificado" type="submit">Crear certificado</button>
+      <!--<div *ngIf="error">{{ error | json }}</div>-->
+    
+    </form>
+    </div>
