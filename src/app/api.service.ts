@@ -36,7 +36,9 @@ export class ApiService {
         .then(() => { /* Estructura .then .catch que dentro tiene el valor para el caso reject 
           de la promesa.
           PREGUNTA: ¿NO DEBERÍA ESTAR EN EL CATCH?*/
-          reject('User not found');
+          
+          resolve(200);
+          //reject('User not found');
         })
         .catch(maybeNotAndError => { /* ESTRUCTURA IF ELSE con varios casos de "error controlados" en
           el primero es en el caso de que el status de error sea 200 lo que significa que se ha logeado

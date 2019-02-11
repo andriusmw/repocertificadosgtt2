@@ -1,8 +1,8 @@
+C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\bin\Debug\netcoreapp2.1\api.dll
+C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\bin\Debug\netcoreapp2.1\api.pdb
 C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\bin\Debug\netcoreapp2.1\api.deps.json
 C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\bin\Debug\netcoreapp2.1\api.runtimeconfig.json
 C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\bin\Debug\netcoreapp2.1\api.runtimeconfig.dev.json
-C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\bin\Debug\netcoreapp2.1\api.dll
-C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\bin\Debug\netcoreapp2.1\api.pdb
 C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\obj\Debug\netcoreapp2.1\api.csprojAssemblyReference.cache
 C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\obj\Debug\netcoreapp2.1\api.csproj.CoreCompileInputs.cache
 C:\Users\Andrius\CERTIFICADOSGTT\certificadosgttproject\api\obj\Debug\netcoreapp2.1\api.RazorAssemblyInfo.cache

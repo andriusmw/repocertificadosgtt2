@@ -1,6 +1,6 @@
 namespace ApiGTT.Models{
     public class Certificates{
-      //public long id { get; set; }
+     public long id { get; set; }
        public string alias { get; set; }
        //public string entidad_emisiora { get; set; }
        //public string numero_de_serie { get; set; }
