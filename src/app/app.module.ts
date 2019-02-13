@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { BoardComponent } from './board/board.component';
 import { ShowCertificatesComponent } from './show-certificates/show-certificates.component';
 import { CreateCertificatesComponent } from './create-certificates/create-certificates.component';
+import { ListCertificatesComponent } from './list-certificates/list-certificates.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CreateCertificatesComponent } from './create-certificates/create-certif
     BoardComponent,
     ShowCertificatesComponent,
     CreateCertificatesComponent,
+    ListCertificatesComponent,
   
   ],
   imports: [
@@ -30,6 +32,7 @@ import { CreateCertificatesComponent } from './create-certificates/create-certif
     FormsModule,
     HttpClientModule,
   ],
+ 
   providers: [ApiService],
   bootstrap: [AppComponent]
 })

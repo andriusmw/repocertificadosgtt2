@@ -48,7 +48,7 @@ namespace api.Controllers
             Users UserResult = this._context.Users.Where(
                 user=>user.username==value.username).First();
                 if(UserResult.password == Encrypt.Hash(value.password) ){
-                   Console.WriteLine("Login");
+                   Console.WriteLine("Logueado");
                 JwtSecurityToken token = BuildToken(UserResult);
                 return Ok(new {token= new JwtSecurityTokenHandler().WriteToken(token)}); //devolvería een verdad el JWT
                 }else {

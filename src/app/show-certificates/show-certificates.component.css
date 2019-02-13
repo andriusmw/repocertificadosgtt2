@@ -46,3 +46,9 @@ app-nav-bar {
     position: relative;
 
 }
+
+.showLists {
+    display: flex;
+    background-color: yellowgreen;
+}
+

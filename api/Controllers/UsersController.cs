@@ -53,7 +53,12 @@ namespace ApiGTT.Controllers
         [HttpPost]
         public ActionResult<Users> Post([FromBody] Users value) //Pasa valores del front al contexto de usuario
         {
-                    this._context.Users.Add(value);
+                    
+                    //value.username,value.password == Encrypt.Hash(value.password),value.email
+                    String pass = value.password;
+                    Console.WriteLine(pass);
+                    value.password = Encrypt.Hash(pass);
+                    this._context.Users.Add(value); //añadir el cifrar la pass que le vamos a enviar aqui a la BD  intento-> value.username,value.password == Encrypt.Hash(value.password),value.email
                     this._context.SaveChanges();
                     return Ok(value);
         }

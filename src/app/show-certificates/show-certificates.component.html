@@ -3,3 +3,29 @@
  
 </app-nav-bar>
 <button id="boton1" routerLink="/board" routerLinkActive="active"><b>Ir a Board</b></button>
+
+
+<button (click)="getcertificates()" >Cargar certificados</button>
+
+
+
+<section class="sowLists">
+<app-list-certificates *ngFor="let listCert of lists" [ListCert]="listCert"> 
+        <pre>{{ lists | json }}</pre>  <!--Esta línea es la que da error
+            y es la que hay que modificar para mostrar los certificados. ya se ven en consola.-->
+    
+
+</app-list-certificates>
+</section> 
+<div class="demo"> 
+        <p id="demo"></p>  <!--a esto se le llama en el ts y se le pasa el objeto en string a "demo"-->
+</div>
+ <!--hace lo de abajo en el .ts-->
+<!---<script>
+document.getElementById("demo").innerHTML = myJSON;
+</script>
+
+
+ 
+
+

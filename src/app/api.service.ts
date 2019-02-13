@@ -19,7 +19,9 @@ export class ApiService {
   register(username, password, email) {
     const body = { username, password, email };
     //------------------------------URL que hay que cambiar por la de nuestra api
+    alert('Usuario registrado');
     return this.http.post('/api/Users', body).toPromise();
+   
   }
 
   login(username, password) {
@@ -74,21 +76,35 @@ export class ApiService {
     // Comento el options porque no pide BODY solo un GET con un Endpoint el Back se ocupa del resto.
 
     /*---------------------------------RAYADA--------------------------------------------*/
-    //.then((rawLists: Array<any>) => { /*Recive el GET del backend y crea un array*/
-    //  console.log(rawLists);
-    //  const lists = rawLists.map(rawList => ({ /*Estructura de datos de las listas en el array*/
-    //    /*Hace un Mapeo del GET y asigna esos valores a la estructura de datos de abajo importada
-    //    del nodels.interface.ts*/
-    //   listId: rawList.id,
-    //    createdAt: rawList.createdAt,
-    //    modifiedAt: rawList.updatedAt,
-    //    name: rawList.name,
-    //    tasks: [],
-    //  })) 
-    //  .catch(() => this.router.navigate(['/login']));
-   // }
+    .then((rawLists: Array<any>) => { /*Recive el GET del backend y crea un array*/
+      console.log(rawLists);
+      const lists = rawLists.map(rawList => ({ /*Estructura de datos de las listas en el array*/
+        /*Hace un Mapeo del GET y asigna esos valores a la estructura de datos de abajo importada
+        del nodels.interface.ts*/
+        id: rawList.id,
+        alias: rawList.alias,
+        password: rawList.password, 
+        id_orga: rawList.id_orga,
+        nombre_cliente: rawList.nombre_cliente,
+        contacto_renovacion: rawList.contacto_renovacion,
+        repositorio: rawList.repositorio,
+        observaciones: rawList.observaciones,
+        integration_list: rawList.integration_list,
+       
+        
+      }));
+      
+      var myJSON = JSON.stringify(lists);
+      document.getElementById("demo").innerHTML = myJSON;
+      alert(myJSON);
+      return lists;
+      
+    })
+    .catch(() => this.router.navigate(['/board'])); 
+      
+    }
     
-  }
+  
 
   
   
@@ -108,6 +124,8 @@ export class ApiService {
     //------------------------------URL que hay que cambiar por la de nuestra api
     return this.http.post('/api/Certificates', body).toPromise();
   }
-
+  display2(){
+    alert ("funciona component");
+  }
 
 }
