@@ -22,8 +22,8 @@ namespace ApiGTT.Controllers
             {
                     Console.WriteLine("No existe usuarios");
                     Users usuario = new Users();
-                    usuario.username="Xavi";
-                    usuario.password=Encrypt.Hash("pass");
+                    usuario.username="admin";
+                    usuario.password=Encrypt.Hash("admin");
                    
                     this._context.Users.Add(usuario);
                     this._context.SaveChanges();
