@@ -5,8 +5,9 @@ Para poder levantar la aplicación es necesario :
     2.realizar "dotnet run" dentro de la carptea "certificadosgttproject/api"
     3.levantar un contenedor de Docker.
     4. ejecutar "docker-compose -f stack.yml up" 
-    5. efectuar "dotnet database update" en "certificadosgttproject/api".
+    5. efectuar "dotnet ef database update" en "certificadosgttproject/api".
     6. Por último ir a la ruta de navegador "localhost/api/Users" para crear un usuario administrador
         por defecto con el que poder entrar.    
             (Usuario: admin)
             (Password: admin)
+            
